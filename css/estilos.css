@@ -1,0 +1,624 @@
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Xanh+Mono:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&display=swap');
+
+*{
+	padding: 0;
+	margin: 0;
+}
+
+html{
+	font-size: 62.5%;
+}
+
+body{
+	background-image: url(../img/vape2.png);
+	background-attachment: fixed;
+}
+
+/*BOTONERA PRINCIPAL*/
+
+.botoneraprincipal {
+	width: 100%;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.botoneraprincipal ul{
+	display: flex;
+}
+
+.botoneraprincipal ul li{
+	list-style: none;
+	margin-right: 10px;
+}
+
+.botoneraprincipal ul li a{
+	color: white;
+	text-decoration: none;
+	font-family: 'Comfortaa', cursive;
+	font-size: 1.6rem;
+	font-weight: 400;
+	margin-right: 25px;
+}
+
+.botoneraprincipal ul li a:hover{
+	color: yellowgreen;
+	font-weight: 600;
+}
+
+.botoneraprincipal a img{
+	width: 10vw;
+	height: 18vh;
+	margin: 15px;
+	border-radius: 100%;
+	opacity: 70%;
+}
+
+/*HEADER*/
+
+header{
+	width: 100%;
+	height: 100%;
+}
+
+.header{
+	height: 44vh;
+	animation-name: headerani;
+	background-size: cover;
+	animation-duration: 10s;
+	animation-iteration-count: infinite;
+}
+
+/*TITULOS*/
+
+.titulos {
+	width: 100%;
+	margin-top: 2px;
+	background-color: 	rgba(169, 169, 169, .8);
+	color: black;
+	font-family: 'Xanh Mono', monospace;
+	font-size: 2.5rem;
+	text-align: center;
+}
+
+/*PARRAFOS*/
+
+.parrafos {
+	margin: 2px;
+	color: white;
+	background-color: rgba(0, 0, 0, .8);
+	font-family: 'Comfortaa', cursive;
+	font-size: 1.6rem;
+	line-height: 2rem;
+	border: 1px double; white;
+}
+
+/*FOOTER*/
+
+.pie div{
+	display: flex;
+	justify-content: space-evenly;
+	margin-top: 5px;
+}
+
+/*VIDEO DEL INDEX*/
+
+.video{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.video iframe{
+	width: 60vw;
+	height: 60vh;
+	margin-top: 5px;
+	margin-bottom: 5px;
+}
+
+/*PROPIEDADES GENERALES*/
+
+.espacio{
+	margin-top: 10px;
+}
+
+.a{
+	display: flex;
+	justify-content: center;
+}
+
+
+/* APLICANDO GRID CON MOBILE FIRST AL INDEX*/
+
+.index{
+
+	display: grid;
+	grid-template-columns: repeat(1, 1fr);
+	grid-template-rows: auto;
+	grid-template-areas: 
+	"nav1"
+	"header1"
+	"video1"
+	"main1"
+	"mapa1"
+	"pie1"
+}
+
+/* NOMBRO LAS AREAS*/
+
+#navindex{
+	grid-area: nav1;
+}
+
+#headerindex{
+	grid-area: header1;
+}
+
+#videoindex{
+	grid-area: video1;
+}
+
+#mainindex{
+	grid-area: main1;
+}
+
+#mapaindex{
+	grid-area: mapa1;
+}
+
+#footerindex{
+	grid-area: pie1;
+}
+
+
+/*APLICO LAS MEDIAS QUERIES PARA EL INDEX*/
+
+@media (min-width: 280px) and (max-width: 480px){
+
+	/* DEFINO POSICION DE MI BOTONERA*/
+
+	.botoneraprincipal{
+		background-color: black;
+		justify-content: space-around;
+		align-items: flex-start;
+		position: sticky;
+	}
+
+	.botoneraprincipal ul{
+		flex-direction: column;
+	}
+
+	.botoneraprincipal a img{
+		width: 15vw;
+		height: 7vh;
+		margin-top: 10px;
+	}
+
+	/*DEFINO TAMAÑO DE LOS TITULOS*/
+
+	.titulos{
+		font-size: 1.6em;
+		justify-content: space-evenly;
+	}
+
+	/*DEFINO TAMAÑO DEL VIDEO*/
+
+	.video iframe{
+		width: 90%;
+		height: auto;
+	}
+
+	/*DEFINO TAMAÑO DE LOS PARRAFOS*/
+	.parrafos{
+		font-size: 1em;
+		text-align: center;
+	}
+
+	/*DEFINO TAMAÑO Y ALINEACION DE LA SECCION CONTACTOS*/
+
+	#mapaindex{
+		flex-direction: column;
+	}
+
+	#mapaindex div{
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#mapaindex div iframe{
+		width: 98%;
+	}
+
+	.h5{
+		width: 98%;
+		height: auto;
+	}
+
+	/*DEFINO TAMAÑO DE LOS ICONOS DEL FOOTER*/
+
+	.pie a img{
+		width: 8vw;
+		height: auto;
+	}
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+
+	/* DEFINO POSICION DE MI BOTONERA*/
+
+	.botoneraprincipal{
+		background-color: black;
+		position: sticky;
+		flex-direction: column;
+    align-items: center;
+	}
+
+	.botoneraprincipal a img{
+		width: 16vw;
+  	height: 17vh;
+	}
+
+	/*DEFINO TAMAÑO DE LOS TITULOS*/
+
+	.titulos{
+		font-size: 1.6em;
+		justify-content: space-around;
+	}
+
+	/*DEFINO TAMAÑO DEL VIDEO*/
+
+	.video iframe{
+		width: 90vw;
+		height: 50vh;
+	}
+
+	/*DEFINO TAMAÑO DE LOS PARRAFOS*/
+	.parrafos{
+		font-size: 1.6em;
+		text-align: center;
+	}
+
+	/*DEFINO TAMAÑO Y ALINEACION DE LA SECCION CONTACTOS*/
+
+	#mapaindex{
+		flex-direction: column;
+	}
+
+	#mapaindex div{
+		width: 100%;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#mapaindex div iframe{
+		width: 98%;
+	}
+
+	.h5{
+		width: 98%;
+		height: 30vh;
+	}
+}
+
+@media (min-width: 1024px) and (max-width: 2000px){
+
+	/* DEFINO POSICION DE MI BOTONERA*/
+
+	.botoneraprincipal{
+		/*background-color: rgba(0, 0, 0, .5);*/
+		justify-content: space-between;
+    flex-direction: row;
+   	position: fixed;
+	}
+
+		.botoneraprincipal ul li a{
+			margin-right: 5px;
+		}
+
+			.botoneraprincipal a img{
+				width: 15vw;
+				height: 25vh;
+				margin-top: 5px;
+			}
+
+	/* DEFINO TAMAÑO DEL VIDEO*/
+
+	.video iframe{
+		width: 40vw;
+		height: 55vh;
+	}
+
+	/* DEFINO POSICION Y TAMAÑO DE LA SECCION MAPA*/
+
+	#mapaindex{
+		display: flex;
+		flex-direction: row;
+		flex-wrap: wrap;
+		justify-content: center;
+	}
+
+		#mapaindex div{
+			width: 45vw;	
+		}
+
+			#mapaindex div iframe{
+				width: 50vw;
+				height: 40vh;
+				margin-left: 5px;
+			}
+
+				#mapaindex span{
+					display: flex;
+					width: 99%;
+				}
+
+					#mapaindex h5{
+						width: 35vw;
+						height: 40vh;
+					}
+}
+
+/*GRID APLICADO EN SECCION GALERIA*/
+
+	/*DEFINO LA CANTIDAD DE COLUMNAS*/
+
+	.videogaleria {
+		display: grid;
+		grid-template-columns: repeat(2, 1fr);
+		justify-items: center;
+	}
+
+		.videogaleria div {
+			width: 35vw;
+			margin: 0.3vh;
+			display: flex;
+			justify-content: space-evenly;
+			flex-wrap: wrap;
+		}
+
+			.videogaleria div img {
+				width: 34vw;
+				height: 34vh;
+				object-fit: cover;
+				border-radius: 3%;
+			}
+	/*DEFINO TAMAÑO DE LOS TIULOS Y APLICO FLEX*/		
+
+	.titulosgaleria{
+		width: 50vw;
+		display: flex;
+		flex-direction: column;
+	}
+
+		.titulosgaleria p{
+			font-size: 1.6rem;
+			background-color: black;
+			color: white;
+			font-family: 'Comfortaa', cursive;
+		}
+
+			div .titulosgaleria{
+				height: auto;
+				display: flex;
+				align-items: center;
+			}
+
+
+/*APLICO MEDIAS QUERIES A VIDEOGALERIA*/
+
+@media (min-width: 280px) and (max-width: 480px){
+
+	/*DEFINO TAMAÑO Y POSICION DE BOTONERA*/
+
+	.botoneraprincipal ul{
+		margin-top: 10px;
+	}
+
+		.botoneraprincipal ul li a{
+			font-size: 1.3em;
+		}
+
+			.botoneraprincipal a img{
+				width: 30vw;
+				height: 12vh;
+				margin-top: 10px;
+			}
+
+	/*DEFINO TAMAÑO Y COLUMNAS PARA LA GALERIA*/
+		
+	.videogaleria{
+		grid-template-columns: repeat(1, 1fr);
+		justify-items: center;
+	}
+
+		.videogaleria div img {
+			width: 35vw;
+			height: 15vh;
+			}	
+
+	/*DEFINO TAMAÑO DE LOS TITULOS*/		
+
+	.titulosgaleria p{
+		font-size: 1em;
+		text-align: center;
+		margin-top: 5px;
+	}
+
+		div .titulosgaleria{
+			flex-direction: row;
+		}
+
+	/*DEFINO TAMAÑO DE LOS ICONOS DEL FOOTER*/
+
+	.pie a img{
+		width: 8vw;
+		height: auto;
+	}
+}
+
+
+/*PROPIEDAD PROVISORIA PARA FORM. DE CONTACTO*/
+
+.h5{
+	width: 45vw;
+	height: 45vh;
+	background-color: white;
+	font-size: 1.5rem;
+	font-family: 'Comfortaa', cursive;
+	text-align: center;
+	line-height: 2rem;
+	border: 1px solid black;
+}
+
+
+/*APLICO GRID Y FLEX BOX A LA SECCION EQUIPOS*/
+
+	/*DEFINO LA CANTIDAD DE COLUMNAS*/
+
+	.equipos{
+
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-template-rows: auto;
+		grid-template-areas: 
+		"nav2 nav2 nav2"
+		"header2 header2 header2"
+		"mes mes mes"
+		"main2 main2 main2"
+		"pie2 pie2 pie2"
+	}
+
+	/* NOMBRO LAS AREAS*/
+
+	#navequipos{
+		grid-area: nav2;
+	}
+
+	#headerequipos{
+		grid-area: header2;
+	}
+
+	#mes{
+		grid-area: mes;
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+
+	#mainequipos{
+		grid-area: main2;
+	}
+
+	#footerequipos{
+		grid-area: pie2;
+	}
+
+/*APLICO PROPIEDADES A LA SECCION EQUIPOS*/
+
+	/*SECCION DESTACADO DEL MES*/
+
+		#mes p{
+			animation: traslado 5s;
+			position: relative;
+		}
+
+			#mes img{
+				width: 50%;
+				border-radius: 20px;
+				animation: traslado 5s;
+				position: relative;
+				border: 3px solid black;
+				object-fit: cover;
+			}
+
+ 	/*GALERIA DE EQUIPOS*/
+
+ 	.galequipos{
+ 		display: flex;
+ 		justify-content: space-evenly;
+    align-items: flex-start;
+ 	}
+
+	 	.galequipos div {
+				margin: 0.3vh;
+				display: flex;
+				flex-direction: column;
+    			align-items: center;
+			}
+
+				.galequipos div a img {
+					width: 100%;
+					height: 38vh;
+					border-radius: 4%;
+				}
+
+	/*APLICO ESTILOS A LOS TITULOS*/
+	
+	.titulosequipos{
+			margin: 5px;
+			font-size: 1.6rem;
+			background-color: black;
+			color: white;
+			font-family: 'Comfortaa', cursive;			
+	}
+
+/*APLICANDO ANIMACIONES*/
+
+/*HEADER*/
+
+@keyframes headerani{
+	0%{background-image: url(../img/header/header.png)}
+	25%{background-image: url(../img/header/header2.png)}
+	50%{background-image: url(../img/header/header3.png)}
+	75%{background-image: url(../img/header/header4.png)}
+	100%{background-image: url(../img/header/header5.png)}
+}
+
+
+/*GALERIA DE VIDEOS Y EQUIPOS*/
+
+.zoom{
+	transition: all 300ms;
+	position: relative;
+}
+
+	.zoom img:hover{
+		transform: scale(1.10);
+		margin-top: 15px;
+		margin-bottom: 5px;
+		box-shadow: 7px 5px 6px 4px rgba(36,33,33,0.7);
+	}
+
+/*DESTACADO DEL MES*/
+
+.destacado{
+			width: 45%;
+			padding: 3px;
+			margin-top: 3px;
+			font-family: 'Dela Gothic One', cursive;
+			color: white;
+			font-size: 3em;
+			border: 3px solid black;
+			border-radius: 5px;
+			text-align: center;
+			animation: traslado 3s;
+			position: relative;
+			color: white;
+			background: linear-gradient(0deg, rgba(0,0,0,1) 0%, rgba(249,10,3,0.984488863904937) 100%);
+	}
+
+@keyframes traslado{
+  from {
+  	left: -100%;
+  }
+  to {
+  	left: 0%;
+  }
+
+  	{animation-timing-function: ease-in-out}
+	}
+
